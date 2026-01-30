@@ -15,13 +15,29 @@ $(function () {
     toggleMenu(this);
   });
 
-  $(window).scroll(function () {
-    // Фон движется в 3 раза МЕДЛЕННЕЕ скролла (0.3 вместо 1.5)
-    var scrollTop = $(window).scrollTop();
-    var slowOffset = scrollTop * 0.3;
+  let ticking = false;
 
-    $(".background").css("transform", "translateY(" + slowOffset + "px)");
+  $(window).on("scroll", function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        const scrollTop = $(window).scrollTop();
+        const fast = 0.5;
+        const faster = 0.6;
+
+        $(".first__text").css("transform", `translateY(${scrollTop * fast}px)`);
+        $(".first__img").css(
+          "transform",
+          `translateY(${scrollTop * faster}px)`,
+        );
+
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
+
+  // Инициализация при загрузке
+  $(window).trigger("scroll");
 });
 
 function toggleMenu(clickedElement) {
