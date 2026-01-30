@@ -21,7 +21,7 @@
   width: 100%;
   height: 900px;
   background-image: radial-gradient(
-    ellipse at bottom,
+    ellipse 85% 75% at bottom,
     var(--bright),
     transparent 70%
   );
@@ -32,10 +32,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 1030px;
+  height: 110%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding-top: 12%;
   // will-change: transform;
   // transition: all 0.3s;
   z-index: 30;
@@ -43,13 +43,45 @@
 }
 
 .first__textTop {
-  font-family: "Unbounded";
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 110%;
-  text-transform: uppercase;
   text-align: center;
-  color: var(--bright);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+
+  span {
+    line-height: 110%;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 48px;
+    font-family: "Unbounded";
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.74);
+  }
+
+  span.ff {
+    color: #fff;
+  }
+  span.br {
+    color: var(--bright);
+  }
+}
+
+.first__textBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  span {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    font-family: "Unbounded";
+    opacity: 0.6;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.74);
+  }
 }
 
 .first__img {
@@ -58,10 +90,10 @@
   left: 0;
   z-index: 20;
   width: 100%;
-  height: 1000px;
+  height: 115%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   // will-change: transform;
   // transition: all 0.3s;
 

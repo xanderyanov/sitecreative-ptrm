@@ -21,8 +21,8 @@ $(function () {
     if (!ticking) {
       requestAnimationFrame(function () {
         const scrollTop = $(window).scrollTop();
-        const fast = 0.5;
-        const faster = 0.6;
+        const fast = 0.82;
+        const faster = -0.15;
 
         $(".first__text").css("transform", `translateY(${scrollTop * fast}px)`);
         $(".first__img").css(
