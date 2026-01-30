@@ -1,0 +1,134 @@
+html,
+body {
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  background: var(--dark);
+}
+
+.w {
+  padding-left: 28px;
+  padding-right: 28px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1522px;
+}
+
+.site {
+  min-height: var(--100vh);
+  position: relative;
+}
+
+.xOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 150;
+}
+
+.xOverlay.active {
+  display: block;
+}
+
+.stop {
+  overflow: hidden;
+  padding-right: 16px;
+
+  .at-max(1080px, {
+		padding-right: 0;
+	});
+}
+
+.btn1 {
+  border: 1px solid var(--bright);
+  border-radius: 4px;
+  padding: 12px 10px;
+  color: #111;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bright);
+  text-decoration: none;
+  display: flex;
+
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #111;
+    position: relative;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 0%;
+    height: 200%;
+    background-color: #111;
+    z-index: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover:before {
+    width: 250%;
+    height: 250%;
+  }
+
+  &:hover span {
+    color: #fff;
+  }
+}
+
+.btn2 {
+  border: 1px solid var(--bright);
+  border-radius: 4px;
+  padding: 12px 10px;
+  color: #fff;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 0%;
+    height: 200%;
+    background-color: var(--bright);
+    z-index: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover:before {
+    width: 250%;
+    height: 250%;
+  }
+
+  &:hover span {
+    color: #111;
+  }
+}
